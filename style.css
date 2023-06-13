@@ -1,5 +1,6 @@
 * {
   text-align: center;
+  background-color: #e5e5e5;
 }
 
 body {
@@ -16,7 +17,7 @@ h1 {
 .grid-container {
   display: flex;
   justify-content: center;
-  border: 1px solid black;
+  border: 1px solid #000814;
   width: 320px;
   height: 320px;
   flex: 0 auto;
@@ -31,15 +32,42 @@ h1 {
 }
 
 .grid:hover {
-  background-color: gray;
+  background-color: #000814;
 }
 
-.grid-selected {
+.grid.selected {
   display: flex;
-  background-color: black;
+  background-color: #000814;
   margin: 0;
   width: 20px;
   height: 20px;
+}
+
+.grid.selected:hover {
+  display: flex;
+  background-color: #001d3d;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.eraser {
+  font-size: 15px;
+  padding: 8px 32px;
+  margin: 15px 0;
+  border: 0.5px solid #000814;
+  border-radius: 8px;
+  background-color: #e5e5e5;
+}
+
+.eraser-active {
+  font-size: 15px;
+  padding: 8px 32px;
+  margin: 15px 0;
+  border: 0.5px solid #000814;
+  border-radius: 8px;
+  background-color: #000814;
+  color: #e5e5e5;
 }
 
 p {
@@ -51,4 +79,5 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
+  border-top: 0.5px solid black;
 }
