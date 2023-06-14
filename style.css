@@ -18,8 +18,8 @@ h1 {
   display: flex;
   justify-content: center;
   border: 1px solid #000814;
-  width: 320px;
-  height: 320px;
+  width: 400px;
+  height: 400px;
   flex: 0 auto;
   flex-wrap: wrap;
 }
@@ -27,8 +27,6 @@ h1 {
 .grid {
   display: flex;
   margin: 0;
-  width: 20px;
-  height: 20px;
 }
 
 .grid:hover {
@@ -39,30 +37,33 @@ h1 {
   display: flex;
   background-color: #000814;
   margin: 0;
-  width: 20px;
-  height: 20px;
 }
 
 .grid.selected:hover {
   display: flex;
   background-color: #001d3d;
   margin: 0;
-  width: 20px;
-  height: 20px;
 }
 
-.eraser {
-  font-size: 15px;
-  padding: 8px 32px;
+.buttons-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn {
+  font-size: 13px;
   margin: 15px 0;
+  width: 100px;
+  height: 35px;
   border: 0.5px solid #000814;
   border-radius: 8px;
   background-color: #e5e5e5;
 }
 
-.eraser-active {
-  font-size: 15px;
-  padding: 8px 32px;
+.active {
+  transform: scale(0.98);
+  font-size: 13px;
   margin: 15px 0;
   border: 0.5px solid #000814;
   border-radius: 8px;
@@ -70,8 +71,19 @@ h1 {
   color: #e5e5e5;
 }
 
+.btn:active {
+  transform: scale(0.98);
+  background-color: #000814;
+  color: #e5e5e5;
+}
+
+.size {
+  margin: 0;
+}
+
 p {
   white-space: nowrap;
+  margin: 8px;
 }
 
 footer {
