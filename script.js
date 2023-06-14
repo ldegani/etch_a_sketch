@@ -3,37 +3,41 @@ const eraserButton = document.querySelector('.eraser');
 
 const contents = [];
 let eraser = false;
+let grids; // Declared as a global variable to be reachable
 
-for (let i = 0; i <= 255; i++) {
-  contents[i] = `content${[i]}`;
+function gridCreation() {
+  for (let i = 0; i <= 255; i++) {
+    const grid = document.createElement('div');
+    grid.classList.add('grid');
+    container.appendChild(grid);
+  }
+
+  grids = document.querySelectorAll('.grid'); // Assign 'grids' globally
+  paintSquare(); // Call the function to attach the event listener
+  erase(); // Call the function to initialize it
 }
 
-for (let i = 0; i <= contents.length - 1; i++) {
-  console.log(contents[i]);
-  contents[i] = document.createElement('div');
-  contents[i].classList.add('grid');
-  container.appendChild(contents[i]);
+function paintSquare() {
+  for (let i = 0; i <= grids.length - 1; i++) {
+    grids[i].addEventListener('click', () => {
+      if (eraser) {
+        grids[i].classList.remove('selected');
+      } else {
+       grids[i].classList.add('selected');
+      }
+    })
+  };
 }
 
-const grids = document.querySelectorAll('.grid');
-
-for (let i = 0; i <= grids.length - 1; i++) {
-  grids[i].addEventListener('click', () => {
+function erase(){
+  eraserButton.addEventListener('click', () => {
+    eraserButton.classList.toggle('eraser-active');
     if (eraser) {
-      grids[i].classList.remove('selected');
+      eraser = false;
     } else {
-      grids[i].classList.add('selected');
+      eraser = true;
     }
   })
-};
+}
 
-eraserButton.addEventListener('click', () => {
-  eraserButton.classList.toggle('eraser-active');
-  if (eraser) {
-    eraser = false;
-    console.log(eraser);
-  } else {
-    eraser = true;
-    console.log(eraser);
-  }
-})
+gridCreation()
