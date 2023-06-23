@@ -64,7 +64,6 @@ function randomColor() {
 }
 
 function clearGrid() {
-  //container.innerHTML = '';
   while(container.firstChild) {
     container.removeChild(container.firstChild);
   }
